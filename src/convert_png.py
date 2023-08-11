@@ -56,8 +56,3 @@ class PPDF(convert_DOC.WPDF):
             else:
                 print(f"Файл {list_file} не существует в {self.InputFolder}")
 
-       
-
-
-# emp = PPDF(['png.png', 'jpeg.jpeg', 'jpg.jpg', 'jpe.jpe', 'jfif.jfif'],"C:\code\VSCODE\convert\In", "C:\code\VSCODE\convert\Out")   
-# emp.convert()
