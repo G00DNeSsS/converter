@@ -31,7 +31,7 @@ class gui:
                            ]
         Layout_Convert = [[sg.TabGroup([[sg.Tab("Документ",Layout_Convert_DOC), sg.Tab("Изображение",Layout_Convert_PNG_JPG)]],expand_x=True)]]
         LayoutMain = [
-            [sg.Text('Конвертер файлов', font="Helvetica 26 bold")],
+            [sg.Text('Конвертер файлов. Your file -> PDF', font="Helvetica 26 bold")],
             [sg.TabGroup([[sg.Tab('Архивы',Layout_Archive, element_justification="left"),sg.Tab('Конвертер',Layout_Convert, element_justification="left")]],size=(1,140),expand_x=True)],
             [sg.Output(key="OutputWindowLogs",expand_x=True, expand_y=True)]]
         window = sg.Window("Converter", LayoutMain, size=(self.size_x, self.size_y), element_justification="center")
@@ -63,8 +63,6 @@ class gui:
         emp2 = convert_png.PPDF(DataFile,IN,OUT)
         emp2.convert()
         
-
-
     def Event(self,window):
         while True:
             event, values = window.read()
@@ -81,7 +79,4 @@ class gui:
                 ThreadConvertPNG_JPGFile.start()
         window.close()
 
-emp = gui(900,700)
-win1 = emp.Create_Window()
-emp.Event(win1)
 
